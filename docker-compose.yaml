@@ -5,10 +5,11 @@ services:
       - "8080:80"
     volumes:
       - ./mapproxy.yaml:/mapproxy/config/mapproxy.yaml
+      - ./cache_data:/mapproxy/config/cache_data
 
   pygeoapi:
-    image: ghcr.io/geopython/pygeoapi:latest
+    image: pygeoapi-wmts
     ports:
       - "8081:80"
     volumes:
-      - ./pygeoapi-config.yaml:/pygeoapi/local.config.yaml
+      - ./pygeoapi-config.yaml:/pygeoapi/local.config.yml
