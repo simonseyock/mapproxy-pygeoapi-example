@@ -1,0 +1,25 @@
+
+services:
+  demo:
+  wmts:
+
+layers:
+  - name: bkg
+    title: BKG WMS
+    sources: [bkg_cache]
+
+caches:
+  bkg_cache:
+    grids: [GLOBAL_WEBMERCATOR]
+    sources: [bkg_wms]
+    meta_buffer: 0
+
+sources:
+  bkg_wms:
+    type: wms
+    req:
+      url: https://sgx.geodatenzentrum.de/wms_basemapde?
+      layers: de_basemapde_web_raster_grau
+      transparent: true
+
+globals:

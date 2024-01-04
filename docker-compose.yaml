@@ -1,0 +1,14 @@
+services:
+  mapproxy:
+    image: ghcr.io/mapproxy/mapproxy/mapproxy:2.0.0-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - /mapproxy.yaml:/mapproxy/config/mapproxy.yaml
+
+  pygeoapi:
+    image: ghcr.io/geopython/pygeoapi:latest
+    ports:
+      - "8081:80"
+    volumes:
+      - ./pygeoapi-config.yml:/pygeoapi/local.config.yml
