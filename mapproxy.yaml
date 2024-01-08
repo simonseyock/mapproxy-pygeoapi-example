@@ -1,6 +1,7 @@
 
 services:
   demo:
+  wms:
   wmts:
 
 layers:
@@ -21,5 +22,8 @@ sources:
       url: https://sgx.geodatenzentrum.de/wms_basemapde?
       layers: de_basemapde_web_raster_grau
       transparent: true
+    coverage:
+      bbox: [ 0.10594674240568917, 45.2375427360256, 20.448891294525627, 56.84787345153812 ]
+      srs: 'EPSG:4326'
 
 globals:
